@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Food</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="vendors/angularjs.js"></script>
+    <script src="scripts/client.js"></script>
+</head>
+
+<body ng-app="FoodApp" ng-controller="MainController as vm">
+
+    <input type="text" ng-model="vm.newFood" />
+    <input type="number" ng-model="vm.newFoodDeliciousness" />
+    <button ng-click="vm.addFood(vm.newFood, vm.newFoodDeliciousness)">Add Food</button>
+
+    <ul>
+        <li ng-repeat="food in vm.foodList">
+            {{food.name}} (deliciousness: {{food.deliciousness}})
+        </li>
+    </ul>
+
+    <button ng-click="vm.refreshFoods()">Refresh List</button>
+
+</body>
+
+</html>
